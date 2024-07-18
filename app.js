@@ -1,12 +1,22 @@
-function HideLastNum(phoneNum){
-    let parts = phoneNum.split(' ');
-    let number1= parts.slice(0, 3).join(' ')
-    let number = parts.slice(3).join(' ');
-    let lastTwoDigits = number.slice(-2);
+function calculateBMI() {
+    // Получаем значения роста и веса из полей ввода
+    let height = document.getElementById('height').value / 100; // переводим в метры
+    let weight = document.getElementById('weight').value;
 
-    let ltw= number.slice(0, -2) + 'xx';
-    
-    let HiddenNumber= number1+" "+ltw;
-    return HiddenNumber
+    // Рассчитываем BMI
+    let bmi = weight / (height * height);
+
+    // Определяем интерпретацию результата
+    let interpretation;
+    if (bmi < 18.5) {
+        interpretation = "Недостаточный вес";
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+        interpretation = "Нормальный вес";
+    } else {
+        interpretation = "Избыточный вес";
+    }
+
+    // Выводим результаты на страницу
+    let resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `<p>Ваш BMI: <strong>${bmi.toFixed(1)}</strong></p><p>${interpretation}</p>`;
 }
-console.log(HideLastNum("+996 555 123 123"));
