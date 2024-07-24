@@ -1,12 +1,21 @@
-function HideLastNum(phoneNum){
-    let parts = phoneNum.split(' ');
-    let number1= parts.slice(0, 3).join(' ')
-    let number = parts.slice(3).join(' ');
-    let lastTwoDigits = number.slice(-2);
+function generateNumbers() {
+    let lottoContainer = document.getElementById('lotto-container');
+    lottoContainer.innerHTML = '';
+    let numbers = generateRandomNumbers(6, 1, 99);
 
-    let ltw= number.slice(0, -2) + 'xx';
-    
-    let HiddenNumber= number1+" "+ltw;
-    return HiddenNumber
+    numbers.forEach(function(number) {
+        let ball = document.createElement('div');
+        ball.classList.add('lotto-ball');
+        ball.textContent = number;
+        lottoContainer.appendChild(ball);
+    });
 }
-console.log(HideLastNum("+996 555 123 123"));
+
+function generateRandomNumbers(amount, min, max) {
+    let numbers = [];
+    for (let i = 0; i < amount; i++) {
+        let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        numbers.push(randomNumber);
+    }
+    return numbers;
+}
