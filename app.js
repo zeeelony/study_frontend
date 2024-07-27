@@ -1,12 +1,13 @@
-function HideLastNum(phoneNum){
-    let parts = phoneNum.split(' ');
-    let number1= parts.slice(0, 3).join(' ')
-    let number = parts.slice(3).join(' ');
-    let lastTwoDigits = number.slice(-2);
+document.addEventListener('DOMContentLoaded', () => {
 
-    let ltw= number.slice(0, -2) + 'xx';
-    
-    let HiddenNumber= number1+" "+ltw;
-    return HiddenNumber
-}
-console.log(HideLastNum("+996 555 123 123"));
+    const textarea = document.getElementById('myTextarea');
+    const currentCount = document.getElementById('currentCount');
+    const maxCount = document.getElementById('maxCount');
+    const maxLength = textarea.getAttribute('maxlength');
+
+    maxCount.textContent = maxLength;
+    textarea.addEventListener('input', () => {
+        const textLength = textarea.value.length;
+        currentCount.textContent = textLength;
+    });
+});
