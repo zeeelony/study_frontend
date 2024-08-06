@@ -1,0 +1,20 @@
+    while (true) {
+        if (postionX <  offsetWidth) {
+            postionX++
+            childblock.style.left = `${postionX}px`
+            requestAnimationFrame(moveBlock)
+        }else if (postionX >= offsetWidth && postionY < offsetHeight){
+            postionY++
+            childblock.style.top = `${postionY}px`
+            requestAnimationFrame(moveBlock)} 
+            break;
+    }
+        
+    if (postionY >= offsetHeight){
+        postionX--
+        childblock.style.left = `${postionX}px`
+        requestAnimationFrame(moveBlock)
+        
+    } 
+}
+moveBlock()
