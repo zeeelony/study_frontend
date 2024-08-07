@@ -52,7 +52,7 @@ const moveBlock = () => {
 }
 moveBlock()
 
-lesson 2 counter
+//lesson 2 counter
 
 let counter = 0;
     let intervalId = null;
