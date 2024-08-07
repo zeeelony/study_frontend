@@ -51,3 +51,34 @@ const moveBlock = () => {
     // moveBlock()
 }
 moveBlock()
+
+lesson 2 counter
+
+let counter = 0;
+    let intervalId = null;
+
+    const secondsElement = document.getElementById('seconds');
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
+    const resetButton = document.getElementById('reset');
+
+    startButton.addEventListener('click', function() {
+        if (!intervalId) {
+            intervalId = setInterval(() => {
+                counter++;
+                secondsElement.textContent = counter;
+            }, 1000);
+        }
+    });
+
+    stopButton.addEventListener('click', function() {
+        clearInterval(intervalId);
+        intervalId = null;
+    });
+
+    resetButton.addEventListener('click', function() {
+        clearInterval(intervalId);
+        intervalId = null;
+        counter = 0;
+        secondsElement.textContent = counter;
+    });
