@@ -78,3 +78,40 @@ tabParent.onclick = (event) => {
     }
 };
 
+
+//CONVERTER
+
+
+const somInput = document.querySelector("#som");
+const usdInput = document.querySelector("#usd");
+const eurInput = document.querySelector("#eur");
+
+const converter = (element, targetElement1, targetElement2) => {
+    element.oninput = () => {
+        const request = new XMLHttpRequest();
+        request.open("GET", "../data/convert.json");
+        request.setRequestHeader("Content-type", "application/json");
+        request.send();
+
+        request.onload = () => {
+            const data = JSON.parse(request.response);
+
+            const somToUsd = data.usd;
+            const somToEur = data.eur;
+
+            if (element === somInput) {
+                usdInput.value = (element.value / somToUsd).toFixed(2);
+                eurInput.value = (element.value / somToEur).toFixed(2);
+            } else if (element === usdInput) {
+                somInput.value = (element.value * somToUsd).toFixed(2);
+                eurInput.value = (element.value * somToUsd / somToEur).toFixed(2);
+            } else if (element === eurInput) {
+                somInput.value = (element.value * somToEur).toFixed(2);
+                usdInput.value = (element.value * somToEur / somToUsd).toFixed(2);
+            }
+        };
+    };
+};
+converter(somInput, usdInput, eurInput);
+converter(usdInput, somInput, eurInput);
+converter(eurInput, somInput, usdInput);
