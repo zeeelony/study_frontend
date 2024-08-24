@@ -1,0 +1,22 @@
+.card{
+    width: 400px;
+    height: 600px;
+    border: 4px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.card p {
+    color: aqua;
+}
+.container_cards{
+    width: 1250px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+
+}
