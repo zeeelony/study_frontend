@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 115, 0);
+}
+
+.coin-container {
+    margin: 20px;
+    perspective: 1000px; 
+}
+
+.coin {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+    line-height:250px;
+    font-size: 50px;
+    color: #000;
+    background: url('https://png.pngtree.com/png-vector/20240314/ourmid/pngtree-gold-coin-skull-vectors-png-image_11951358.png') no-repeat center center;
+    background-size: cover;
+    transform-style: preserve-3d;
+    color: rgb(0, 255, 217);
+}
+
+.flip {
+    animation: flip 1s forwards;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+}
+.btnCoin{
+    height: 50px;
+    width: 200px;
+    background-color: rgb(250, 180, 50);
+}

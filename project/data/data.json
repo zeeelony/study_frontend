@@ -1,0 +1,12 @@
+[
+    {
+        "planet":"T",
+        "age":10000,
+        "population":"dinosaurs"
+    },
+    {
+        "planet":"X",
+        "age":21000,
+        "population":"BUGS"
+    }
+]
