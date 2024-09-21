@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": "ddsd0",
+      "title": "learn html",
+      "status": true
+    },
+    {
+      "id": "8176",
+      "title": "learn js",
+      "status": false
+    },
+    {
+      "id": "1a3a",
+      "title": "прочитать книгу",
+      "status": true
+    },
+    {
+      "id": "bf51",
+      "title": "qwr",
+      "status": false
+    },
+    {
+      "id": "7523",
+      "title": "qwr",
+      "status": false
+    },
+    {
+      "id": "d062",
+      "title": "qwr",
+      "status": false
+    }
+  ]
+}

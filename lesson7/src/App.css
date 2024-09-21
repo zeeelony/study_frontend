@@ -1,0 +1,19 @@
+тзь.App {
+    padding: 20px 50px;
+    text-align: center;
+}
+
+
+
+li {
+    list-style-type: none;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 15px auto;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
