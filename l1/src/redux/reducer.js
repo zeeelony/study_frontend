@@ -1,4 +1,3 @@
-// redux/counterSlice.js
 const initialState = {
     value: 0
 };
@@ -17,7 +16,6 @@ export const counterReducer = (state = initialState, action) => {
     }
 };
 
-// Action Creators
 export const increment = (amount) => ({
     type: 'INCREMENT',
     payload: amount
